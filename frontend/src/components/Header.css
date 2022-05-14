@@ -1,0 +1,19 @@
+header {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgb(199, 199, 199);
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    margin: 0;
+    justify-content: flex-end;
+    width: 100%;
+    gap: 3%;
+}
+
+a{
+    text-decoration: none;
+}
