@@ -67,10 +67,15 @@ const loginUser =asyncHandler( async  (req,res) =>
 // @desc    REGISTER new User
 // @route   Post /api/users/me
 // @access  private
-const getUserData = (req,res) =>
+const getUserData =asyncHandler(async (req,res) =>
 {
-    res.json({ message: 'Data'})
-}
+    const {_id,name,email} = await User.findById(req.user.id)
+    res.status(200).json({
+        id: _id,
+        name,
+        email,
+    })
+})
 const generateToken = (id) =>
 {
     return jwt.sign({ id}, process.env.JWT_SECRET, {
